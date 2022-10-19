@@ -7,7 +7,7 @@ let randomIndex;
 let animating = false;
 
 function setup() {
-    createCanvas(600,600);
+    createCanvas(1800, 937);
     background(200);
     textSize(32);
 
