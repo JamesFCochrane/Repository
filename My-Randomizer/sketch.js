@@ -1,19 +1,19 @@
 let adjectives = [{adjective: "incredible"}, {adjective: "exciting"}, {adjective: "boring"},             
-     {adjective: "ordinary"}, {adjective: "unrelenting"}, {adjective: "cheap"}, {adjective: "precious"},
-     {adjective: "so much fun"}, {adjective: "confusing"}, {adjective: "indescribable"}, {adjective: "unfair"},
-     {adjective: "pointless"}, {adjective: "beautiful"}, {adjective: "disapointing"}, {adjective: "grueling"},
-     {adjective: "unexplainable"}, {adjective: "unpredictable"}, {adjective: "full of love"}, {adjective: "a test"},
-     {adjective: "uneventful"}, {adjective: "painful"}, {adjective: "simple"}, {adjective: "overwhelming"},
-     {adjective: "scary"}, {adjective: "unclean"}, {adjective: "strange"}, {adjective: "odd"}, {adjective: "hell"}, 
-     {adjective: "a gift"}, {adjective: "uncertain"}, {adjective: "all about money"}, {adjective: "hard"}, 
-     {adjective: "fragile"}, {adjective: "uncomfortable"}, {adjective: "wet"}, {adjective: "cringe"}, 
-     {adjective: "whimsical"}, {adjective: "joyous"}, {adjective: "sad"}, {adjective: "fleeting"}, 
-     {adjective: "ugly"}, {adjective: "unforgiving"}, {adjective: "plain"}, {adjective: "a whirlwind"}, 
-     {adjective: "tragic"}, {adjective: "ever changing"}, {adjective: "taken for granted"}, {adjective: "fluid"}, 
-     {adjective: "complicated"}, {adjective: "untintentionally funny"}, {adjective: "rigged"}, 
-     {adjective: "nerve-racking"}, {adjective: "lonely"}, {adjective: "unpromised"}, {adjective: "a slog"}, 
-     {adjective: "a marathon"}, {adjective: "nothing special"}, {adjective: "impetuous"}, {adjective: "a joke"}, 
-     {adjective: "like a box of chocolates"}, {adjective: "mind-boggling"}, {adjective: "unreplaceable"}, {adjective: "based"}];
+    // {adjective: "ordinary"}, {adjective: "unrelenting"}, {adjective: "cheap"}, {adjective: "precious"},
+    // {adjective: "so much fun"}, {adjective: "confusing"}, {adjective: "indescribable"}, {adjective: "unfair"},
+    // {adjective: "pointless"}, {adjective: "beautiful"}, {adjective: "disapointing"}, {adjective: "grueling"},
+    // {adjective: "unexplainable"}, {adjective: "unpredictable"}, {adjective: "full of love"}, {adjective: "a test"},
+    // {adjective: "uneventful"}, {adjective: "painful"}, {adjective: "simple"}, {adjective: "overwhelming"},
+    // {adjective: "scary"}, {adjective: "unclean"}, {adjective: "strange"}, {adjective: "odd"}, {adjective: "hell"}, 
+    // {adjective: "a gift"}, {adjective: "uncertain"}, {adjective: "all about money"}, {adjective: "hard"}, 
+    // {adjective: "fragile"}, {adjective: "uncomfortable"}, {adjective: "wet"}, {adjective: "cringe"}, 
+    // {adjective: "whimsical"}, {adjective: "joyous"}, {adjective: "sad"}, {adjective: "fleeting"}, 
+    // {adjective: "ugly"}, {adjective: "unforgiving"}, {adjective: "plain"}, {adjective: "a whirlwind"}, 
+    // {adjective: "tragic"}, {adjective: "ever changing"}, {adjective: "taken for granted"}, {adjective: "fluid"}, 
+    // {adjective: "complicated"}, {adjective: "untintentionally funny"}, {adjective: "rigged"}, 
+    // {adjective: "nerve-racking"}, {adjective: "lonely"}, {adjective: "unpromised"}, {adjective: "a slog"}, 
+    // {adjective: "a marathon"}, {adjective: "nothing special"}, {adjective: "impetuous"}, {adjective: "a joke"}, 
+     {adjective: "like a box of chocolates"}, {adjective: "mind-boggling"}, {adjective: "irreplaceable"}, {adjective: "based"}];
 
 let randomIndex;
 let animating = false;
@@ -57,5 +57,4 @@ function mousePressed() {
     if (adjectives)
     animating = true;
         setTimeout(randomizer, 2000);
-
 }
