@@ -44,10 +44,10 @@ function randomizer(){
         randomIndex = int(random(adjectives.length));
         fill(255);
         text(`Life is ${adjectives[randomIndex].adjective}.`, 30, 50);
-       // fill(255);
         adjectives.splice(randomIndex, 1);
     } else {
         fill(255);
+        background(0);
         text("Now you're dead!", 50, 50);
         text("The end.", 50, 85);
     }
