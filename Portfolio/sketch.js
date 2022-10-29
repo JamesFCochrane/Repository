@@ -1,7 +1,7 @@
 let adjectives = [{adjective: "incredible"}, {adjective: "exciting"}, {adjective: "boring"},             
      {adjective: "ordinary"}, {adjective: "unrelenting"}, {adjective: "cheap"}, {adjective: "precious"},
      {adjective: "so much fun"}, {adjective: "confusing"}, {adjective: "indescribable"}, {adjective: "unfair"},
-     {adjective: "pointless"}, {adjective: "beautiful"}, {adjective: "disappointing"}, {adjective: "grueling"},
+     {adjective: "pointless"}, {adjective: "beautiful"}, {adjective: "disapointing"}, {adjective: "grueling"},
      {adjective: "unexplainable"}, {adjective: "unpredictable"}, {adjective: "full of love"}, {adjective: "a test"},
      {adjective: "uneventful"}, {adjective: "painful"}, {adjective: "simple"}, {adjective: "overwhelming"},
      {adjective: "scary"}, {adjective: "unclean"}, {adjective: "strange"}, {adjective: "odd"}, {adjective: "hell"}, 
