@@ -17,7 +17,7 @@ function preload(){
 }
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(windowWidth, 800);
     background(200);
     textSize(30);
     textFont('Courier new');
