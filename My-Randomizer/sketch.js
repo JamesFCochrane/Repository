@@ -9,7 +9,7 @@ let adjectives = [{adjective: "incredible"}, {adjective: "exciting"}, {adjective
      {adjective: "fragile"}, {adjective: "uncomfortable"}, {adjective: "wet"}, {adjective: "cringe"}, 
      {adjective: "whimsical"}, {adjective: "joyous"}, {adjective: "sad"}, {adjective: "fleeting"}, 
      {adjective: "ugly"}, {adjective: "unforgiving"}, {adjective: "plain"}, {adjective: "a whirlwind"}, 
-     {adjective: "tragic"}, {adjective: "ever changing"}, {adjective: "taken for granted"}, {adjective: "fluid"}, 
+     {adjective: "tragic"}, {adjective: "ever-changing"}, {adjective: "taken for granted"}, {adjective: "fluid"}, 
      {adjective: "complicated"}, {adjective: "untintentionally funny"}, {adjective: "rigged"}, 
      {adjective: "nerve-racking"}, {adjective: "lonely"}, {adjective: "unpromised"}, {adjective: "a slog"}, 
      {adjective: "a marathon"}, {adjective: "nothing special"}, {adjective: "impetuous"}, {adjective: "a joke"}, 
