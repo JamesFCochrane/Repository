@@ -1,13 +1,51 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
   <head>
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
+    <meta charset="UTF-8" />
   </head>
   <body>
+
+    <script>
+      AFRAME.registerComponent('limit-my-distance', {
+        init: function() {
+          this.zero = new THREE.Vector3(0, 0, 0);
+        },
+        tick: function() {
+          if (this.el.object3D.position.distanceTo(this.zero) > 100) {
+            this.el.object3D.position.set(0, 1.6, 0);
+          }
+        }
+      });
+    </script>
+
     <a-scene>
-      <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 2.15 .2" radius=".05" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 0 -4" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
+      <a-camera limit-my-distance></a-camera>
+
+      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+      <a-sphere position="-1 2.15 -1.8" radius=".05" color="#EF2D5E"></a-sphere>
+      <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+      <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
+
+      
+      <!-- Floor Planes -->
+      <a-plane position="-3 .02 -4" rotation="-90 0 0" width="1" height="2" color="#EB984E"></a-plane>
+      <a-plane position="-5 .02 -8" rotation="-90 0 0" width="1" height="2" color="#A2D9CE"></a-plane>
+
+
+
+      <!-- Top Planes -->
+      <a-plane position="-5 5 -13" rotation="90 0 0" width="1.5" height="2.5" color="#7FB3D5"></a-plane>
+      <a-plane position="-5 5 -8" rotation="90 0 0" width="1.5" height="2.5" color="#AF7AC5"></a-plane>
+      <a-plane position="-4 5 -17" rotation="90 0 0" width="1" height="2" color="#E59866"></a-plane>
+      <a-plane position="-3 5 -3" rotation="90 0 0" width="1" height="2" color="#F7DC6F"></a-plane>
+
+      <a-plane position="4 5 -16" rotation="90 0 0" width="1" height="2" color="red"></a-plane>
+      <a-plane position="5 5 -12" rotation="90 0 0" width="1" height="2" color="cyan"></a-plane>
+      <a-plane position="5 5 -20" rotation="90 0 0" width="1" height="2" color="blue"></a-plane>
+      <a-plane position="3 5 -7" rotation="90 0 0" width="1" height="2" color="green"></a-plane>
+
       <a-sky color="#ECECEC"></a-sky>
 
       <a-assets>
@@ -17,15 +55,31 @@
           src="assets/charactermodelinglowpolyfig.glb">
         </a-asset-item>
 
+        <a-asset-item 
+        id="RollerCoaster"
+        src="assets/RollerCoaster.glb">
+      </a-asset-item>
+
+      <a-asset-item 
+        id="Tiles"
+        src="assets/Tiles.glb">
+      </a-asset-item>
+
       </a-assets>
 
       <a-entity 
           id="charactermodelinglowpolyfig"
           gltf-model="#charactermodelinglowpolyfig"
-          position="0 0 0"
+          position="-1 0 -2"
+          scale="0.5 0.5 0.5">
+
+      <a-entity 
+          id="RollerCoaster"
+          gltf-model="#RollerCoaster"
+          position="-10 0 -500"
           scale="0.5 0.5 0.5">
           
-      </a-entity>
+      <!-- </a-entity> -->
       <!-- <a-entity gltf-model="#charactermodelinglowpolyfig" scale="0.01 0.01 0.01"></a-entity> -->
 
     </a-scene>
