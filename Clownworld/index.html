@@ -33,7 +33,7 @@
     <!-- <a-entity oculus-touch-controls="hand: left"></a-entity> -->
 <!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->
 
-    <script>
+    <!-- <script>
       AFRAME.registerComponent('limit-my-distance', {
         init: function() {
           this.zero = new THREE.Vector3(0, 0, 0);
@@ -44,7 +44,7 @@
           }
         }
       });
-    </script>
+    </script> -->
 
 
 
@@ -64,13 +64,13 @@
     <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
 </a-entity>
 
-      <a-entity id="cameraRig" position="0 1.6 0">
+      <!-- <a-entity id="cameraRig" position="0 1.6 0">
         <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
       </a-entity>
       <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-      <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+      <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity> -->
       <!-- <a-box position="0 0 -10"></a-box> -->
-      <a-camera limit-my-distance></a-camera>
+      <!-- <a-camera limit-my-distance></a-camera> -->
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
       <a-sphere position="-1 2.15 -1.8" radius=".05" color="#EF2D5E"></a-sphere>
