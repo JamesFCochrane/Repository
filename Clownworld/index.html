@@ -43,12 +43,19 @@
   <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
   <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity>
 
+  <!-- Camera + controllers rig -->
+  <a-entity id="rig">
+    <a-camera position="0 1.6 0"></a-camera>
+    <a-entity oculus-touch-controls="hand: left" ></a-entity>
+    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+  </a-entity>
+
       <a-entity id="cameraRig" position="0 1.6 0">
         <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
       </a-entity>
       <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
       <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-      <a-box position="0 0 -10"></a-box>
+      <!-- <a-box position="0 0 -10"></a-box> -->
       <a-camera limit-my-distance></a-camera>
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
