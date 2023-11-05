@@ -2,6 +2,11 @@
 <html lang="en">
 
   <head>
+ 
+    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-motion-capture@2.0.0/dist/aframe-motion-capture.min.js"></script>
+
     <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
     <meta charset="UTF-8" />
   </head>
@@ -26,23 +31,19 @@
       });
     </script>
 
-<script>
-  AFRAME.registerComponent('thumbstick-logging',{
-  init: function () {
-    this.el.addEventListener('thumbstickmoved', this.logThumbstick);
-  },
-  logThumbstick: function (evt) {
-    if (evt.detail.y > 0.95) { console.log("DOWN"); }
-    if (evt.detail.y < -0.95) { console.log("UP"); }
-    if (evt.detail.x < -0.95) { console.log("LEFT"); }
-    if (evt.detail.x > 0.95) { console.log("RIGHT"); }
-  }
-});
-</script>
 
 
 
-    <a-scene>
+
+
+    <a-scene webxr>
+
+      <a-entity id="cameraRig" position="0 1.6 0">
+        <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
+      </a-entity>
+      <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+      <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+      <a-box position="0 0 -10"></a-box>
       <a-camera limit-my-distance></a-camera>
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
