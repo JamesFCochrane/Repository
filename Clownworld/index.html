@@ -2,7 +2,8 @@
 <html lang="en">
 
   <head>
- 
+    <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aframe-motion-capture@2.0.0/dist/aframe-motion-capture.min.js"></script>
@@ -37,6 +38,10 @@
 
 
     <a-scene webxr>
+
+      <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
+  <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
+  <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity>
 
       <a-entity id="cameraRig" position="0 1.6 0">
         <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
