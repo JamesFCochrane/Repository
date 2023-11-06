@@ -73,7 +73,7 @@
       <a-camera limit-my-distance></a-camera>
 
       <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-      <a-sphere position="-1 2.15 -1.8" radius=".05" color="#EF2D5E"></a-sphere>
+      <!-- <a-sphere position="-.95 1.81 -1.2" radius=".05" color="#EF2D5E"></a-sphere> -->
       <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
 
@@ -99,16 +99,45 @@
 
       <a-assets>
 
+        
+        <!-- full clown scene -->
+        <a-asset-item 
+          id="Clownassemblage"
+          src="assets/Clownsassemblage.glb">
+        </a-asset-item>
+        
+    
+        <!-- model 1 -->
         <a-asset-item 
           id="Character1standard"
           src="assets/Character1standard.glb">
         </a-asset-item>
 
+        <!-- model 2 -->
+        <a-asset-item 
+          id="Character2smallplus"
+          src="assets/Character2smallplus.glb">
+        </a-asset-item>
+
+        <!-- model 3 -->
+        <a-asset-item 
+          id="Character3.1largeplus"
+          src="assets/Character3.1largeplus.glb">
+        </a-asset-item>
+
+        <!-- model 4 -->
+        <a-asset-item 
+          id="Character4smallthin"
+          src="assets/Character4smallthin.glb">
+        </a-asset-item>
+
+        <!-- roller coaster  -->
         <a-asset-item 
         id="RollerCoaster"
         src="assets/RollerCoaster.glb">
       </a-asset-item>
 
+      <!-- Tiles -->
       <a-asset-item 
         id="Tiles"
         src="assets/Tiles.glb">
@@ -116,17 +145,50 @@
 
       </a-assets>
 
+      
+      <!-- full clown scene -->
       <a-entity 
+          id="Clownassemblage"
+          gltf-model="#Clownassemblage"
+          position="-1 0 -1.5"
+          scale="0.4 0.4 0.4">
+      
+      
+      
+      <!-- model 1 -->
+      <!-- <a-entity 
           id="Character1standard"
           gltf-model="#Character1standard"
           position="-1 0 -2"
-          scale="0.4 0.4 0.4">
+          scale="0.4 0.4 0.4"> -->
 
+          <!-- model 2 -->
+          <!-- <a-entity 
+          id="Character2smallplus"
+          gltf-model="#Character2smallplus"
+          position="-1 0 -2"
+          > -->
+
+          <!-- model 3 -->
+          <!-- <a-entity 
+          id="Character3.1largeplus"
+          gltf-model="#Character3.1largeplus"
+          position="-1 0 -2"
+          > -->
+
+          <!-- model 4 -->
+          <!-- <a-entity 
+          id="Character4smallthin"
+          gltf-model="#Character4smallthin"
+          position="-1 0 -2"
+          > -->
+
+<!-- roller coaster -->
       <a-entity 
           id="RollerCoaster"
           gltf-model="#RollerCoaster"
-          position="-10 0 -500"
-          scale="0.5 0.5 0.5">
+          position="0 0 -100"
+          scale="0.08 0.08 0.08">
           
       <!-- </a-entity> -->
       <!-- <a-entity gltf-model="#charactermodelinglowpolyfig" scale="0.01 0.01 0.01"></a-entity> -->
