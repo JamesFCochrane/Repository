@@ -113,8 +113,14 @@
 
       <a-assets>
 
+        <!-- explosion png -->
         <a-assets>
-          <img id="explosion" src="explosion.png">
+          <img id="smoke" src="assets/smoke.png">
+        </a-assets>
+
+        <!-- smoke plume png -->
+        <a-assets>
+          <img id="plume" src="assets/plume.png">
         </a-assets>
         
         <!-- full clown scene -->
@@ -168,8 +174,19 @@
 
 
 
+<!-- blunt smoke -->
+      <a-image src="#smoke" width="3" height="1.5"
+      position="-.45 1.35 -1"
+      scale=".05 .1">
+      </a-image>
 
-      <a-image src="explosion" width="3" height="1.5"></a-image>
+<!-- smoke plume -->
+      <a-image src="#plume" width="3" height="1.5"
+      position="20 13 -68"
+      scale="15 20">
+      </a-image>
+
+
       
       <!-- full clown scene -->
       <a-entity 
@@ -177,7 +194,7 @@
           gltf-model="#Clownassemblage"
           position="-1 0 -1.5"
           scale="0.4 0.4 0.4">
-      
+      </a-entity>
       
       
       <!-- model 1 -->
@@ -212,9 +229,9 @@
       <a-entity 
           id="RollerCoaster"
           gltf-model="#RollerCoaster"
-          position="0 0 -100"
-          scale="0.09 0.09 0.09">
-          
+          position="0 0 -70"
+          scale="0.05 0.05 0.05">
+          </a-entity>
       <!-- </a-entity> -->
       <!-- <a-entity gltf-model="#charactermodelinglowpolyfig" scale="0.01 0.01 0.01"></a-entity> -->
 
