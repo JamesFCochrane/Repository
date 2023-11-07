@@ -3,15 +3,6 @@
 
   <head>
 
-    <!-- New Scripts -->
-    <!-- <script src="https://cdn.jsdelivr.net/gh/c-frame/aframe-extras@7.1.0/dist/aframe-extras.min.js"></script> 
-
-    <script src="https://rawgit.com/fernandojsg/aframe-teleport-controls/master/dist/aframe-teleport-controls.min.js"></script>
-
-    <script src="https://unpkg.com/aframe-thumb-controls-component@1.1.0/dist/aframe-thumb-controls-component.min.js"></script> -->
-
-
-
     <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
 
     <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
@@ -62,7 +53,7 @@
     <a-scene>
 
  <!--AUDIO-->
- <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/main/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
+ <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/56a716e4fd670a6992798137a3ada620117b39b3/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
  <a-sound src="src: assets/wind.mp3" autoplay="true" loop="true"></a-sound>
 
  <a-sound
@@ -128,7 +119,7 @@
           src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
         ></a-asset-item>
 
-        <!-- explosion png -->
+        <!-- smoke png -->
         <a-assets>
           <img id="smoke" src="assets/smoke.png">
         </a-assets>
@@ -142,31 +133,6 @@
         <a-asset-item 
           id="Clownassemblage"
           src="assets/Clownsassemblage.glb">
-        </a-asset-item>
-        
-    
-        <!-- model 1 -->
-        <a-asset-item 
-          id="Character1standard"
-          src="assets/Character1standard.glb">
-        </a-asset-item>
-
-        <!-- model 2 -->
-        <a-asset-item 
-          id="Character2smallplus"
-          src="assets/Character2smallplus.glb">
-        </a-asset-item>
-
-        <!-- model 3 -->
-        <a-asset-item 
-          id="Character3.1largeplus"
-          src="assets/Character3.1largeplus.glb">
-        </a-asset-item>
-
-        <!-- model 4 -->
-        <a-asset-item 
-          id="Character4smallthin"
-          src="assets/Character4smallthin.glb">
         </a-asset-item>
 
         <!-- roller coaster  -->
@@ -216,35 +182,6 @@
           position="-1 0 -1.5"
           scale="0.4 0.4 0.4">
       </a-entity>
-      
-      
-      <!-- model 1 -->
-      <!-- <a-entity 
-          id="Character1standard"
-          gltf-model="#Character1standard"
-          position="-1 0 -2"
-          scale="0.4 0.4 0.4"> -->
-
-          <!-- model 2 -->
-          <!-- <a-entity 
-          id="Character2smallplus"
-          gltf-model="#Character2smallplus"
-          position="-1 0 -2"
-          > -->
-
-          <!-- model 3 -->
-          <!-- <a-entity 
-          id="Character3.1largeplus"
-          gltf-model="#Character3.1largeplus"
-          position="-1 0 -2"
-          > -->
-
-          <!-- model 4 -->
-          <!-- <a-entity 
-          id="Character4smallthin"
-          gltf-model="#Character4smallthin"
-          position="-1 0 -2"
-          > -->
 
 <!-- roller coaster -->
       <a-entity 
@@ -253,8 +190,6 @@
           position="0 0 -70"
           scale="0.05 0.05 0.05">
           </a-entity>
-      <!-- </a-entity> -->
-      <!-- <a-entity gltf-model="#charactermodelinglowpolyfig" scale="0.01 0.01 0.01"></a-entity> -->
 
       <!-- blunt -->
       <a-entity 
@@ -263,41 +198,6 @@
       position="-1.15 -.3 -1.6"
       scale=".5 .5 .5">
       </a-entity>
-
-
-
-
-      <!-- nav-mesh: protecting us from running thru things  -->
-      <!-- <a-entity id="navmesh-Hello" gltf-model="assets/gltf/AdvHelloWorldnavmesh.gltf" visible="false" nav-mesh=""></a-entity> -->
-<!-- Basic movement and teleportation  -->
-      <!-- <a-entity id="cameraRig" movement-controls="constrainToNavMesh: true;" navigator="cameraRig: #cameraRig; cameraHead: #head; collisionEntities: .collision; ignoreEntities: .clickable" position="0 0 0" rotation="0 0 0"> -->
-        <!-- camera -->
-        <!-- <a-entity id="head" camera="active: true" position="0 1.6 0" look-controls="pointerLockEnabled: true; reverseMouseDrag: true" ></a-entity> -->
-              <!-- Left Controller -->
-              <!-- <a-entity id="leftHand" hand-controls="hand: left; handModelStyle: lowPoly; color: #15ACCF" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head; button: trigger; curveShootingSpeed: 18; landingMaxAngle: 60" visible="true"></a-entity> -->
-              <!-- Right Controller -->
-              <!-- <a-entity id="rightHand" hand-controls="hand: right; handModelStyle: lowPoly; color: #15ACCF" laser-controls raycaster="showLine: true; far: 10; interval: 0; objects: .clickable, a-link;" line="color: #7cfc00; opacity: 0.5" visible="true"></a-entity>
-      </a-entity> -->
-
-      <!-- <a-entity id="cameraRig"> -->
-        <!-- camera -->
-        <!-- <a-entity id="head" camera wasd-controls look-controls></a-entity> -->
-        <!-- hand controls -->
-        <!-- <a-entity id="left-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-        <a-entity id="right-hand" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head;"></a-entity>
-      </a-entity>
-
-      <a-entity oculus-touch-controls="hand: left" thumb-controls="hand: left" thumb-controls-debug="enabled: true; controllerType: oculus">
-
-
-      <a-entity
-      teleport-controls="cameraRig: #cameraRig"
-      gearvr-controls
-     />
-  </a-entity>
-
-  <a-entity oculus-touch-controls="hand: left" vive-controls="hand: left" thumb-controls="hand: left"></a-entity>
-  <a-entity oculus-touch-controls="hand: right" vive-controls="hand: right" thumb-controls="hand: right"></a-entity> -->
 
 
 
