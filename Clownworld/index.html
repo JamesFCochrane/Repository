@@ -61,6 +61,10 @@
 
     <a-scene>
 
+ <!--AUDIO-->
+ <a-sound src="src: assets/wind.wav" autoplay="true" position="0 2 5"></a-sound>
+
+
       <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
   <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
   <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
@@ -166,6 +170,12 @@
         src="assets/Tiles.glb">
       </a-asset-item>
 
+      <!-- blunt -->
+      <a-asset-item 
+          id="blunt"
+          src="assets/blunt.glb">
+        </a-asset-item>
+
       </a-assets>
 
 
@@ -176,7 +186,7 @@
 
 <!-- blunt smoke -->
       <a-image src="#smoke" width="3" height="1.5"
-      position="-.45 1.35 -1"
+      position="-.45 1.37 -.97"
       scale=".05 .1">
       </a-image>
 
@@ -235,7 +245,13 @@
       <!-- </a-entity> -->
       <!-- <a-entity gltf-model="#charactermodelinglowpolyfig" scale="0.01 0.01 0.01"></a-entity> -->
 
-
+      <!-- blunt -->
+      <a-entity 
+      id="blunt"
+      gltf-model="#blunt"
+      position="-1.15 -.3 -1.6"
+      scale=".5 .5 .5">
+      </a-entity>
 
 
 
