@@ -62,8 +62,14 @@
     <a-scene>
 
  <!--AUDIO-->
- <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/main/Clownworld/assets/wind.mp3" autoplay="true" loop="true" position="0 2 5"></a-sound>
+ <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/main/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
+ <a-sound src="src: assets/wind.mp3" autoplay="true" loop="true"></a-sound>
 
+ <a-sound
+        src="#music"
+        autoplay = "true"
+        preload="auto"
+        ></a-sound>
 
       <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
   <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
@@ -116,6 +122,11 @@
 
 
       <a-assets>
+
+        <a-asset-item
+          id="music"         
+          src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
+        ></a-asset-item>
 
         <!-- explosion png -->
         <a-assets>
