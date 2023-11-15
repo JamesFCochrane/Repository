@@ -86,23 +86,6 @@
       <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
       <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
 
-      
-      <!-- Floor Planes -->
-      <a-plane position="-3 .02 -4" rotation="-90 0 0" width="1" height="2" color="#EB984E"></a-plane>
-      <a-plane position="-5 .02 -8" rotation="-90 0 0" width="1" height="2" color="#A2D9CE"></a-plane>
-
-
-
-      <!-- Top Planes -->
-      <a-plane position="-5 5 -13" rotation="90 0 0" width="1.5" height="2.5" color="#7FB3D5"></a-plane>
-      <a-plane position="-5 5 -8" rotation="90 0 0" width="1.5" height="2.5" color="#AF7AC5"></a-plane>
-      <a-plane position="-4 5 -17" rotation="90 0 0" width="1" height="2" color="#E59866"></a-plane>
-      <a-plane position="-3 5 -3" rotation="90 0 0" width="1" height="2" color="#F7DC6F"></a-plane>
-
-      <a-plane position="4 5 -16" rotation="90 0 0" width="1" height="2" color="red"></a-plane>
-      <a-plane position="5 5 -12" rotation="90 0 0" width="1" height="2" color="cyan"></a-plane>
-      <a-plane position="5 5 -20" rotation="90 0 0" width="1" height="2" color="blue"></a-plane>
-      <a-plane position="3 5 -7" rotation="90 0 0" width="1" height="2" color="green"></a-plane>
 
       <a-sky color="#ECECEC"></a-sky>
 
@@ -139,6 +122,18 @@
         <a-asset-item 
           id="Character1head"
           src="assets/Character1head.glb">
+        </a-asset-item>
+
+        <!-- Giant Clown Left -->
+        <a-asset-item 
+          id="Character2giant"
+          src="assets/Character2smallplusreposed.glb">
+        </a-asset-item>
+
+        <!-- Giant Clown Right -->
+       <a-asset-item 
+          id="Character3giant"
+          src="assets/Character3.1largeplusrepose.glb">
         </a-asset-item>
 
         <!-- roller coaster  -->
@@ -186,6 +181,24 @@
           position="35 5 -60"
           scale="40 40 40">
       </a-entity>
+
+      <!-- Giant Clown Left -->
+      <a-entity 
+          id="Character2giant"
+          gltf-model="#Character2giant"
+          position="-150 18 130"
+          scale="30 30 30"
+          rotation="10 70 -90">
+        </a-entity>
+
+    <!-- Giant Clown Right -->
+   <a-entity 
+      id="Character3giant"
+      gltf-model="#Character3giant"
+      position="130 -13 20"
+      scale="30 30 30"
+      rotation="-3 -60 0">
+      </a-entity> 
       
       <!-- full clown scene -->
       <a-entity 
