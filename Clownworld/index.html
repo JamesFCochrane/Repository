@@ -1,231 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
+<head>
 
-    <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
+  <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script>
 
-    <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/aframe-motion-capture@2.0.0/dist/aframe-motion-capture.min.js"></script>
-
-
-
-
-    <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
-    <script src="./oculus-thumbstick-controls.js"></script>
+  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aframe-motion-capture@2.0.0/dist/aframe-motion-capture.min.js"></script>
 
 
 
-    <script src="https://aframe.io/releases/1.4.0/aframe.min.js"></script>
-    <meta charset="UTF-8" />
-  </head>
-  <body>
+
+  <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
+  <script src="./oculus-thumbstick-controls.js"></script>
 
 
-    <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity> -->
-    <!-- <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
 
-    <!-- <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity> -->
-    <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity> -->
-<!-- <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity> -->
-    <!-- <a-entity oculus-touch-controls="hand: left"></a-entity> -->
-<!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <meta charset="UTF-8" />
+</head>
 
-    <script>
-      AFRAME.registerComponent('limit-my-distance', {
-        init: function() {
-          this.zero = new THREE.Vector3(0, 0, 0);
-        },
-        tick: function() {
-          if (this.el.object3D.position.distanceTo(this.zero) > 100) {
-            this.el.object3D.position.set(0, 1.6, 0);
-          }
+<script>
+  // function that waits until everything is loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('a-assets').addEventListener('loaded', function () {
+      console.log('loaded')
+      // make button visible and loading text invisible
+      document.querySelector("#button").style.visibility = 'visible';
+      document.querySelector("#loading").style.visibility = 'hidden';
+
+    })
+  });
+</script>
+
+<!-- css for loading screen -->
+<style>
+  #loadingDiv {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000;
+    z-index: 800;
+    color: #eee;
+
+
+  }
+
+  .btnDiv {
+    width: 200px;
+    height: 100px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 100;
+    visibility: hidden;
+    /* display: none; */
+  }
+
+
+
+  #buttonCoverDiv {
+    z-index: 150;
+    width: 80vw;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #000;
+  }
+
+  #button {
+    z-index: 200;
+  }
+
+  button {
+    font-size: 1.7rem;
+    border-radius: 2px;
+    border: 2px solid #eee;
+    padding: 1rem;
+    background-color: #000;
+
+  }
+
+  button:hover {
+    background-color: #288059;
+  }
+</style>
+
+<body>
+
+
+  <div id="loadingDiv">
+    <div class="" id="">
+      <div class="">
+      </div>
+    </div>
+    <div id="button" class="btnDiv">
+      <h1>CLOWNING</h1>
+      <h3 id="loading">loading...</h3>
+      <button onClick='document.querySelector("#loadingDiv").style.display =
+    "none"; let entity = document.querySelector("#ambientSound");
+    entity.components.sound.playSound(); let entity2 = document.querySelector
+    ("#templeSound");
+    entity2.components.sound.playSound();'>
+        blunt img here</button>
+
+    </div>
+  </div>
+
+
+  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
+
+  <!-- <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: left"></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->
+
+  <script>
+    AFRAME.registerComponent('limit-my-distance', {
+      init: function () {
+        this.zero = new THREE.Vector3(0, 0, 0);
+      },
+      tick: function () {
+        if (this.el.object3D.position.distanceTo(this.zero) > 100) {
+          this.el.object3D.position.set(0, 1.6, 0);
         }
-      });
-    </script>
+      }
+    });
+  </script>
 
 
 
 
 
 
-    <a-scene>
+  <a-scene>
 
- <!--AUDIO-->
- <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/56a716e4fd670a6992798137a3ada620117b39b3/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
- <a-sound src="src: Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
+    <!--AUDIO-->
+    <!-- <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/56a716e4fd670a6992798137a3ada620117b39b3/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
+ <a-sound src="src: Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound> -->
 
- <a-sound
+    <!-- <a-entity id="ambientSound" position="0 0 -80"
+      sound="src: #expanseAudio; loop: true; volume: .5; rolloffFactor: 1.3; refDistance: 5; distanceModel: exponential;"></a-entity>
+    <a-entity id="templeSound" position="0 0 110"
+      sound="src: #templeAudio; loop: true; volume: .5; rolloffFactor: 1; refDistance: 5; distanceModel: exponential;"></a-entity> -->
+
+    <!-- <a-sound
         src="#music"
         autoplay = "true"
         preload="auto"
-        ></a-sound>
+        ></a-sound> -->
 
-      <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
-  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
+    <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
+    <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
   <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
 
-  <!-- Camera + controllers rig -->
-  <a-entity id="rig">
-    <a-camera position="0 1.6 0"></a-camera>
-    <a-entity oculus-touch-controls="hand: left" ></a-entity>
-    <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
-</a-entity>
+    <!-- Camera + controllers rig -->
+    <a-entity id="rig">
+      <a-camera position="0 1.6 0"></a-camera>
+      <a-entity oculus-touch-controls="hand: left"></a-entity>
+      <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
+    </a-entity>
 
-      <a-entity id="cameraRig" position="0 1.6 0">
-        <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
-      </a-entity>
-      <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-      <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-      <!-- <a-box position="0 0 -10"></a-box> -->
-      <a-camera limit-my-distance></a-camera>
+    <a-entity id="cameraRig" position="0 1.6 0">
+      <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
+    </a-entity>
+    <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+    <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+    <!-- <a-box position="0 0 -10"></a-box> -->
+    <a-camera limit-my-distance></a-camera>
 
-      <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-      <!-- <a-sphere position="-.95 1.81 -1.2" radius=".05" color="#EF2D5E"></a-sphere> -->
-      <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
-      <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
-
-
-      <a-sky color="#ECECEC"></a-sky>
+    <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+    <!-- <a-sphere position="-.95 1.81 -1.2" radius=".05" color="#EF2D5E"></a-sphere> -->
+    <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
+    <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
 
 
+    <a-sky color="#ECECEC"></a-sky>
 
 
 
 
 
+
+
+
+
+
+
+    <a-assets>
+
+      <audio id="expanseAudio" src="assets/wind.mp3" preload="auto"></audio>
+      <audio id="templeAudio" src="assets/wind.mp3" preload="auto"></audio>
+
+      <a-asset-item id="music" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"></a-asset-item>
+
+      <!-- smoke png -->
       <a-assets>
+        <img id="smoke" src="assets/smoke.png">
+      </a-assets>
 
-        <a-asset-item
-          id="music"         
-          src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"
-        ></a-asset-item>
+      <!-- smoke plume png -->
+      <a-assets>
+        <img id="plume" src="assets/plume.png">
+      </a-assets>
 
-        <!-- smoke png -->
-        <a-assets>
-          <img id="smoke" src="assets/smoke.png">
-        </a-assets>
+      <!-- full clown scene -->
+      <a-asset-item id="Clownassemblage" src="assets/Clownsassemblage.glb">
+      </a-asset-item>
 
-        <!-- smoke plume png -->
-        <a-assets>
-          <img id="plume" src="assets/plume.png">
-        </a-assets>
-        
-        <!-- full clown scene -->
-        <a-asset-item 
-          id="Clownassemblage"
-          src="assets/Clownsassemblage.glb">
-        </a-asset-item>
+      <!-- Giant Clown Head 1 -->
+      <a-asset-item id="Character1head" src="assets/Character1head.glb">
+      </a-asset-item>
 
-        <!-- Giant Clown Head 1 -->
-        <a-asset-item 
-          id="Character1head"
-          src="assets/Character1head.glb">
-        </a-asset-item>
+      <!-- Giant Clown Left -->
+      <a-asset-item id="Character2giant" src="assets/Character2smallplusreposed.glb">
+      </a-asset-item>
 
-        <!-- Giant Clown Left -->
-        <a-asset-item 
-          id="Character2giant"
-          src="assets/Character2smallplusreposed.glb">
-        </a-asset-item>
+      <!-- Giant Clown Right -->
+      <a-asset-item id="Character3giant" src="assets/Character3.1largeplusrepose.glb">
+      </a-asset-item>
 
-        <!-- Giant Clown Right -->
-       <a-asset-item 
-          id="Character3giant"
-          src="assets/Character3.1largeplusrepose.glb">
-        </a-asset-item>
-
-        <!-- roller coaster  -->
-        <a-asset-item 
-        id="RollerCoaster"
-        src="assets/RollerCoaster.glb">
+      <!-- roller coaster  -->
+      <a-asset-item id="RollerCoaster" src="assets/RollerCoaster.glb">
       </a-asset-item>
 
       <!-- Tiles -->
-      <a-asset-item 
-        id="Tiles"
-        src="assets/Tiles.glb">
+      <a-asset-item id="Tiles" src="assets/Tiles.glb">
       </a-asset-item>
 
       <!-- blunt -->
-      <a-asset-item 
-          id="blunt"
-          src="assets/blunt.glb">
-        </a-asset-item>
+      <a-asset-item id="blunt" src="assets/blunt.glb">
+      </a-asset-item>
 
-      </a-assets>
+    </a-assets>
 
 
+    <a-sound 
+    src="#expanseAudio" 
+    autoplay="true"></a-sound>
+
+    <a-sound 
+    src="#templeAudio" 
+    autoplay="true"></a-sound>
 
 
 
 
 
-<!-- blunt smoke -->
-      <a-image src="#smoke" width="3" height="1.5"
-      position="-.45 1.37 -.97"
-      scale=".05 .1">
-      </a-image>
 
-<!-- smoke plume -->
-      <a-image src="#plume" width="3" height="1.5"
-      position="20 13 -68"
-      scale="15 20">
-      </a-image>
 
-<!-- Giant Clown Head 1 -->
-      <a-entity 
-          id="Character1head"
-          gltf-model="#Character1head"
-          position="35 5 -60"
-          scale="40 40 40">
-      </a-entity>
 
-      <!-- Giant Clown Left -->
-      <a-entity 
-          id="Character2giant"
-          gltf-model="#Character2giant"
-          position="-150 18 130"
-          scale="30 30 30"
-          rotation="10 70 -90">
-        </a-entity>
+    <!-- blunt smoke -->
+    <a-image src="#smoke" width="3" height="1.5" position="-.45 1.37 -.97" scale=".05 .1">
+    </a-image>
+
+    <!-- smoke plume -->
+    <a-image src="#plume" width="3" height="1.5" position="20 13 -68" scale="15 20">
+    </a-image>
+
+    <!-- Giant Clown Head 1 -->
+    <a-entity id="Character1head" gltf-model="#Character1head" position="35 5 -60" scale="40 40 40">
+    </a-entity>
+
+    <!-- Giant Clown Left -->
+    <a-entity id="Character2giant" gltf-model="#Character2giant" position="-150 18 130" scale="30 30 30"
+      rotation="10 70 -90">
+    </a-entity>
 
     <!-- Giant Clown Right -->
-   <a-entity 
-      id="Character3giant"
-      gltf-model="#Character3giant"
-      position="130 -13 20"
-      scale="30 30 30"
+    <a-entity id="Character3giant" gltf-model="#Character3giant" position="130 -13 20" scale="30 30 30"
       rotation="-3 -60 0">
-      </a-entity> 
-      
-      <!-- full clown scene -->
-      <a-entity 
-          id="Clownassemblage"
-          gltf-model="#Clownassemblage"
-          position="-1 0 -1.5"
-          scale="0.4 0.4 0.4">
-      </a-entity>
+    </a-entity>
 
-<!-- roller coaster -->
-      <a-entity 
-          id="RollerCoaster"
-          gltf-model="#RollerCoaster"
-          position="0 0 -70"
-          scale="0.05 0.05 0.05">
-          </a-entity>
+    <!-- full clown scene -->
+    <a-entity id="Clownassemblage" gltf-model="#Clownassemblage" position="-1 0 -1.5" scale="0.4 0.4 0.4">
+    </a-entity>
 
-      <!-- blunt -->
-      <a-entity 
-      id="blunt"
-      gltf-model="#blunt"
-      position="-1.15 -.3 -1.6"
-      scale=".5 .5 .5">
-      </a-entity>
+    <!-- roller coaster -->
+    <a-entity id="RollerCoaster" gltf-model="#RollerCoaster" position="0 0 -70" scale="0.05 0.05 0.05">
+    </a-entity>
+
+    <!-- blunt -->
+    <a-entity id="blunt" gltf-model="#blunt" position="-1.15 -.3 -1.6" scale=".5 .5 .5">
+    </a-entity>
 
 
 
-    </a-scene>
-  </body>
+  </a-scene>
+</body>
+
 </html>
