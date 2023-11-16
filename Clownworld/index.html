@@ -172,11 +172,11 @@
       <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
     </a-entity>
 
-    <a-entity id="cameraRig" position="0 1.6 0">
+    <!-- <a-entity id="cameraRig" position="0 1.6 0">
       <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
     </a-entity>
     <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-    <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
+    <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity> -->
     <!-- <a-box position="0 0 -10"></a-box> -->
     <a-camera limit-my-distance></a-camera>
 
@@ -243,16 +243,18 @@
       <a-asset-item id="blunt" src="assets/blunt.glb">
       </a-asset-item>
 
+      <a-sound 
+      src="#expanseAudio" 
+      autoplay="true"></a-sound>
+  
+      <!-- <a-sound 
+      src="#templeAudio" 
+      autoplay="true"></a-sound> -->
+
     </a-assets>
 
 
-    <a-sound 
-    src="#expanseAudio" 
-    autoplay="true"></a-sound>
 
-    <a-sound 
-    src="#templeAudio" 
-    autoplay="true"></a-sound>
 
 
 
