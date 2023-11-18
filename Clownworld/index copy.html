@@ -3,22 +3,8 @@
 
 <head>
 
-
-
-  <script src="https://cdn.rawgit.com/donmccurdy/aframe-extras/v6.0.0/dist/aframe-extras.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aframe-teleport-controls/dist/aframe-teleport-controls.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/aframe-motion-capture@2.0.0/dist/aframe-motion-capture.min.js"></script>
-
-
-
-
-  <script src="https://unpkg.com/aframe-environment-component@1.3.1/dist/aframe-environment-component.min.js"></script>
-  <script src="./oculus-thumbstick-controls.js"></script>
-
-
-
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <!-- <script src="https://gftruj.github.io/webzamples/aframe/controls/oculus-thumbstick-controls.js"></script> -->
+ 
   <meta charset="UTF-8" />
 </head>
 
@@ -114,75 +100,9 @@
   </div>
 
 
-  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity> -->
-  <!-- <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
-
-  <!-- <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity> -->
-  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
-  <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity> -->
-  <!-- <a-entity oculus-touch-controls="hand: left"></a-entity> -->
-  <!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->
-
-  <script>
-    AFRAME.registerComponent('limit-my-distance', {
-      init: function () {
-        this.zero = new THREE.Vector3(0, 0, 0);
-      },
-      tick: function () {
-        if (this.el.object3D.position.distanceTo(this.zero) > 100) {
-          this.el.object3D.position.set(0, 1.6, 0);
-        }
-      }
-    });
-  </script>
-
-
-
-
-
-
   <a-scene>
 
-    <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
-  <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity>
 
-    <!--AUDIO-->
-    <!-- <a-sound src="src: https://github.com/JamesFCochrane/Repository/blob/56a716e4fd670a6992798137a3ada620117b39b3/Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound>
- <a-sound src="src: Clownworld/assets/wind.mp3" autoplay="true" loop="true"></a-sound> -->
-
-    <!-- <a-entity id="ambientSound" position="0 0 -80"
-      sound="src: #expanseAudio; loop: true; volume: .5; rolloffFactor: 1.3; refDistance: 5; distanceModel: exponential;"></a-entity>
-    <a-entity id="templeSound" position="0 0 110"
-      sound="src: #templeAudio; loop: true; volume: .5; rolloffFactor: 1; refDistance: 5; distanceModel: exponential;"></a-entity> -->
-
-    <!-- <a-sound
-        src="#music"
-        autoplay = "true"
-        preload="auto"
-        ></a-sound> -->
-
-    <!-- Create a rig for the controllers and attach oculus-thumbstick-controls to any controller -->
-    <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity>
-  <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
-
-    <!-- Camera + controllers rig -->
-    <a-entity id="rig">
-      <a-camera position="0 1.6 0"></a-camera>
-      <a-entity oculus-touch-controls="hand: left"></a-entity>
-      <a-entity oculus-touch-controls="hand: right" oculus-thumbstick-controls></a-entity>
-    </a-entity>
-
-    <!-- <a-entity id="cameraRig" position="0 1.6 0">
-      <a-entity id="head" camera look-controls motion-capture-recorder></a-entity>
-    </a-entity>
-    <a-entity hand-controls="left" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity>
-    <a-entity hand-controls="right" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #head"></a-entity> -->
-    <!-- <a-box position="0 0 -10"></a-box> -->
-    <a-camera limit-my-distance></a-camera>
-
-    <!-- <a-box position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box> -->
-    <!-- <a-sphere position="-.95 1.81 -1.2" radius=".05" color="#EF2D5E"></a-sphere> -->
-    <!-- <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder> -->
     <a-plane position="0 0 0" rotation="-90 0 0" width="1000" height="1000" color="white"></a-plane>
 
 
@@ -201,9 +121,6 @@
     <a-assets>
 
       <audio id="expanseAudio" src="assets/wind.mp3" preload="auto"></audio>
-      <audio id="templeAudio" src="assets/wind.mp3" preload="auto"></audio>
-
-      <a-asset-item id="music" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"></a-asset-item>
 
       <!-- smoke png -->
       <a-assets>
@@ -246,10 +163,6 @@
       <a-sound 
       src="#expanseAudio" 
       autoplay="true"></a-sound>
-  
-      <!-- <a-sound 
-      src="#templeAudio" 
-      autoplay="true"></a-sound> -->
 
     </a-assets>
 
