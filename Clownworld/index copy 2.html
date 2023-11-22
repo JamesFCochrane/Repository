@@ -102,10 +102,8 @@
       <h1>CLOWNING</h1>
       <h3 id="loading">loading...</h3>
       <button onClick='document.querySelector("#loadingDiv").style.display =
-    "none"; let entity = document.querySelector("#expanseAudio");
-    entity.components.sound.playSound(); let entity2 = document.querySelector
-    ("#expanseAudio");
-    entity2.components.sound.playSound();'>
+    "none"; 
+    document.querySelector("#backgroundSound").emit("start")'>
         blunt img here</button>
 
     </div>
@@ -195,6 +193,8 @@
       </a-asset-item>
 
       <a-sound 
+      id="backgroundSound"
+      on="start"
       src="#expanseAudio" 
       autoplay="false"
       loop="true"></a-sound>
