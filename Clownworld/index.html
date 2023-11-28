@@ -200,8 +200,8 @@
 
     <a-assets>
 
-      <audio id="expanseAudio" src="assets/wind.mp3" preload="auto"></audio>
-      <audio id="templeAudio" src="assets/wind.mp3" preload="auto"></audio>
+      <audio id="expanseAudio" src="assets/music.mp3" preload="auto"></audio>
+      <audio id="templeAudio" src="assets/music.mp3" preload="auto"></audio>
 
       <a-asset-item id="music" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"></a-asset-item>
 
@@ -229,6 +229,10 @@
 
       <!-- Giant Clown Right -->
       <a-asset-item id="Character3giant" src="assets/Character3.1largeplusrepose.glb">
+      </a-asset-item>
+
+      <!-- Giant Clown Head 2 -->
+      <a-asset-item id="Character4head" src="assets/Character4smallthingianthead.glb">
       </a-asset-item>
 
       <!-- roller coaster  -->
@@ -281,8 +285,13 @@
     </a-entity>
 
     <!-- Giant Clown Right -->
-    <a-entity id="Character3giant" gltf-model="#Character3giant" position="130 -13 20" scale="30 30 30"
-      rotation="-3 -60 0">
+    <a-entity id="Character3giant" gltf-model="#Character3giant" position="110 -13 50" scale="30 30 30"
+      rotation="-3 -120 0">
+    </a-entity>
+
+    <!-- Giant Clown Head 2 -->
+    <a-entity id="Character4head" gltf-model="#Character4head" position="-60 -90 -125" scale="40 40 40"
+      rotation="25 30 0">
     </a-entity>
 
     <!-- full clown scene -->
