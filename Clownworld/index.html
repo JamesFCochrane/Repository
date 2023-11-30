@@ -69,7 +69,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #000;
+    background-color: #eee;
   }
 
   #button {
@@ -81,7 +81,7 @@
     border-radius: 2px;
     border: 2px solid #eee;
     padding: 1rem;
-    background-color: #000;
+    background-color: #eee;
 
   }
 
@@ -104,10 +104,20 @@
       <button onClick='document.querySelector("#loadingDiv").style.display =
     "none"; 
     document.querySelector("#backgroundSound").emit("start")'>
-        explosion.png</button>
+        Enter</button>
 
     </div>
   </div>
+
+
+  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-controls></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: right" thumbstick-controls></a-entity> -->
+
+  <!-- <a-entity tracked-controls="controller: 0; idPrefix: OpenVR"></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: left" thumbstick-logging></a-entity>
+  <a-entity oculus-touch-controls="hand: right" thumbstick-logging></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: left"></a-entity> -->
+  <!-- <a-entity oculus-touch-controls="hand: right"></a-entity> -->
 
   <!-- <script>
     AFRAME.registerComponent('limit-my-distance', {
@@ -121,6 +131,11 @@
       }
     });
   </script> -->
+
+
+
+
+
 
   <a-scene>
 
@@ -152,7 +167,10 @@
 
     <a-assets>
 
-      <audio id="expanseAudio" src="assets/wind.mp3" preload="auto"></audio>
+      <audio id="expanseAudio" src="assets/music.mp3" preload="auto"></audio>
+      <audio id="templeAudio" src="assets/music.mp3" preload="auto"></audio>
+
+      <a-asset-item id="music" src="https://cdn.aframe.io/basic-guide/audio/backgroundnoise.wav"></a-asset-item>
 
       <!-- smoke png -->
       <a-assets>
@@ -180,6 +198,10 @@
       <a-asset-item id="Character3giant" src="assets/Character3.1largeplusrepose.glb">
       </a-asset-item>
 
+      <!-- Giant Clown Head 2 -->
+      <a-asset-item id="Character4head" src="assets/Character4smallthingianthead.glb">
+      </a-asset-item>
+
       <!-- roller coaster  -->
       <a-asset-item id="RollerCoaster" src="assets/RollerCoaster.glb">
       </a-asset-item>
@@ -198,6 +220,10 @@
       src="#expanseAudio" 
       autoplay="false"
       loop="true"></a-sound>
+  
+      <!-- <a-sound 
+      src="#templeAudio" 
+      autoplay="true"></a-sound> -->
 
     </a-assets>
 
@@ -212,7 +238,7 @@
 
 
     <!-- blunt smoke -->
-    <a-image src="#smoke" width="3" height="1.5" position="-.45 1.37 -.97" scale=".05 .1">
+    <a-image src="#smoke" width="3" height="1.5" position="-.57 1.5 -.78" scale=".1 .2">
     </a-image>
 
     <!-- smoke plume -->
@@ -229,8 +255,13 @@
     </a-entity>
 
     <!-- Giant Clown Right -->
-    <a-entity id="Character3giant" gltf-model="#Character3giant" position="130 -13 20" scale="30 30 30"
-      rotation="-3 -60 0">
+    <a-entity id="Character3giant" gltf-model="#Character3giant" position="110 -13 50" scale="30 30 30"
+      rotation="-3 -120 0">
+    </a-entity>
+
+    <!-- Giant Clown Head 2 -->
+    <a-entity id="Character4head" gltf-model="#Character4head" position="-60 -90 -125" scale="40 40 40"
+      rotation="25 30 0">
     </a-entity>
 
     <!-- full clown scene -->
@@ -242,7 +273,7 @@
     </a-entity>
 
     <!-- blunt -->
-    <a-entity id="blunt" gltf-model="#blunt" position="-1.15 -.3 -1.6" scale="1 1 1">
+    <a-entity id="blunt" gltf-model="#blunt" position="-2.67 -3.42 -2.7" scale="1.5 1.5 1.5">
     </a-entity>
 
 
